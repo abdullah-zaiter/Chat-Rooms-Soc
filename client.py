@@ -1,27 +1,26 @@
 import socket, threading
 
+def connection_options():
+        print('''A- Register your name
+B- Check available Users.
+C- Check available chat rooms.
+D- Register to a chat room.
+E- Create a chat room.
+F- Sign out of server.''')
 
 def send(uname):
-    while True:
-        msg = raw_input()
-        data = str(msg)
-        cli_sock.send(data)
-
-def connection_options():
-    print('''
-    A- Check available Users.
-    B- Check available chat rooms.
-    C- Register to a chat room.
-    D- Create a chat room.
-        ''')
+        while True:
+                msg = raw_input()
+                msg = str(msg)
+                if(msg == "config"):
+                    connection_options()    
+                else:
+                        cli_sock.send(msg)
 
 def receive():
     while True:
         data = cli_sock.recv(1024)
-        if(data == "What would you like to do ?"):
-                print(str(data))
-                connection_options()
-
+        print(str(data))
 
 if __name__ == "__main__":   
     # socket
@@ -30,11 +29,10 @@ if __name__ == "__main__":
     # connect
     HOST = 'localhost'
     PORT = 5023
-
-    uname = raw_input('Enter your chat username: ')
-
-    cli_sock.connect((HOST, PORT))     
+    cli_sock.connect((HOST, PORT)) 
+    uname = "foo"    
     print('Connected to remote host...')
+    connection_options()    
 
 
     thread_send = threading.Thread(target = send,args=[uname])

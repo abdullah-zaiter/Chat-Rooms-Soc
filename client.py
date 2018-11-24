@@ -1,7 +1,6 @@
 import socket
 import threading
 
-
 def connection_options():
     print('''A- Register your username
 B- Check available Users.
@@ -10,31 +9,31 @@ D- Entering a chat room.
 E- Create a chat room.
 F- Sign out of server.''')
 
-
 def send(uname):
     while True:
         msg = raw_input()
         msg = str(msg)
         if(msg == "config"):
             connection_options()
+        elif(msg == "@file" or msg == "@FILE"):
         else:
-            cli_sock.send(msg)
+            socket_client.send(msg)
 
 
 def receive():
     while True:
-        data = cli_sock.recv(1024)
+        data = socket_client.recv(1024)
         print(str(data))
 
 
 if __name__ == "__main__":
     # socket
-    cli_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # connect
     HOST = 'localhost'
     PORT = 5023
-    cli_sock.connect((HOST, PORT))
+    socket_client.connect((HOST, PORT))
     uname = "foo"
     print('Connected to remote host...')
     connection_options()

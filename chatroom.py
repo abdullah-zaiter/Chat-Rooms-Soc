@@ -108,8 +108,7 @@ def enter_chatroom(socket_client):
                         Chat_rooms[index].add_user(All_Users[from_socket_conn_to_index(socket_client)])
                         break
         else:
-            Chat_rooms[index].Users.append(All_Users[from_socket_conn_to_index(socket_client)])
-            Chat_rooms[index].welcoming_message(socket_client)
+            Chat_rooms[index].add_user(All_Users[from_socket_conn_to_index(socket_client)])
                         
 
 def exit_chatroom(socket_client):

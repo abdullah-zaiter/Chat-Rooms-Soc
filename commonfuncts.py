@@ -50,3 +50,4 @@ def from_socket_conn_to_room_index(socket_client):
         for j in range(len(Chat_rooms[i].Users)):
             if(socket_client == Chat_rooms[i].Users[j].Connection):
                 return i,j
+    return None,None

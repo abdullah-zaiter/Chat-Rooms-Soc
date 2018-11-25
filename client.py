@@ -8,7 +8,7 @@ def connection_options():
     print('''A- Register your username
 B- Check available Users.
 C- Check available chat rooms.
-D- Entering a chat room.
+D- Joining a chat room.
 E- Create a chat room.
 F- Sign out of server.''')
 

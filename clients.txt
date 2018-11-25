@@ -1,1 +1,3 @@
-User 1: asdasd, adress 127.0.0.1:33586.
+User 1: asdasd, adress 127.0.0.1:33910 connected to asdasdchat room
+User 2: aaa, adress 127.0.0.1:33914 available, but not in chat rooms
+User 3: asdd, adress 127.0.0.1:33922 connected to asdasdchat room

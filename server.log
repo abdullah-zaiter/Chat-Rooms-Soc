@@ -1,23 +1,19 @@
-2018-11-25 13:13:33,758 - Server started on port : 5023
-2018-11-25 13:13:35,526 - Connection of 127.0.0.1:33586 created
-2018-11-25 13:13:38,305 - Server: 'New User Added asdasd
-2018-11-25 13:13:38,305 - Connection of 127.0.0.1:33586 is registered as asdasd
-2018-11-25 13:13:52,273 - Connection of 127.0.0.1:33590 created
-2018-11-25 13:14:01,639 - Server: 'New User Added foo
-2018-11-25 13:14:01,640 - Connection of 127.0.0.1:33590 is registered as foo
-2018-11-25 13:14:27,970 - foo wanted to know the chat rooms
-2018-11-25 13:14:27,971 - Server: sent users available chat rooms to foo
-2018-11-25 13:14:35,876 - foo wanted to know the available users
-2018-11-25 13:14:47,723 - asdasd created chat room asd
-2018-11-25 13:14:52,039 - foo wanted to know the chat rooms
-2018-11-25 13:14:52,039 - Server: sent users available chat rooms to foo
-2018-11-25 13:14:57,819 - foo tried to enter chat room
-2018-11-25 13:14:57,820 - Server: sent users available chat rooms to foo
-2018-11-25 13:15:33,935 - foo successfully joined chat room asd
-2018-11-25 13:15:37,684 - foo contacted chat room asd
-2018-11-25 13:15:41,173 - asdasd contacted chat room asd
-2018-11-25 13:15:45,462 - Server sent 'You exited the room !' to foo
-2018-11-25 13:15:45,462 - foo signed out the chat room asd
-2018-11-25 13:15:51,768 - Server sent 'You exited the room !' to asdasd
-2018-11-25 13:15:51,768 - asdasd signed out the chat room asd
-2018-11-25 13:15:51,769 - Server: Room 'asd' is empty now, deleting.
+2018-11-25 13:32:57,549 - Server started on port : 5023
+2018-11-25 13:33:01,590 - Connection of 127.0.0.1:33910 created
+2018-11-25 13:33:04,344 - Server: New User Added asdasd
+2018-11-25 13:33:04,345 - Connection of 127.0.0.1:33910 is registered as asdasd
+2018-11-25 13:33:09,384 - Connection of 127.0.0.1:33914 created
+2018-11-25 13:33:22,023 - asdasd tried to enter chat room
+2018-11-25 13:33:22,023 - asdasd failed joining chat room
+2018-11-25 13:33:27,337 - asdasd created chat room asdasd
+2018-11-25 13:33:35,537 - Connection of 127.0.0.1:33922 created
+2018-11-25 13:33:56,322 - Server: New User Added aaa
+2018-11-25 13:33:56,323 - Connection of 127.0.0.1:33914 is registered as aaa
+2018-11-25 13:34:03,976 - Server: New User Added asdd
+2018-11-25 13:34:03,976 - Connection of 127.0.0.1:33922 is registered as asdd
+2018-11-25 13:34:06,019 - asdd wanted to know the chat rooms
+2018-11-25 13:34:06,020 - Server: sent users available chat rooms to asdd
+2018-11-25 13:34:12,838 - asdd tried to enter chat room
+2018-11-25 13:34:12,839 - Server: sent users available chat rooms to asdd
+2018-11-25 13:34:14,437 - asdd successfully joined chat room asdasd
+2018-11-25 13:34:28,125 - Connection of 127.0.0.1:33934 created

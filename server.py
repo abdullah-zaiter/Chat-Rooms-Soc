@@ -85,7 +85,17 @@ def clients_file_update():
             for i in range(len(All_Users)):
                 if(len(All_Users[i].Username)>=1):
                     j += 1
-                    clients_names.append("User "+str(j)+": "+All_Users[i].Username+", adress "+str(All_Users[i].IP)+":"+str(All_Users[i].Port)+".")
+                    string = "User "+str(j)+": "+All_Users[i].Username+", adress "+str(All_Users[i].IP)+":"+str(All_Users[i].Port)
+                    socket = All_Users[i].Connection
+                    if(len(Chat_rooms)>=1):
+                        index, k = from_socket_conn_to_room_index(socket)
+                        if(index != None):
+                            string += (" connected to "+ Chat_rooms[index].Name+"chat room")
+                        else:
+                            string += " available, but not in chat rooms"
+                    else:
+                        string += " available, but not in chat rooms"
+                    clients_names.append(string)
             with open('clients.txt', 'w') as f:
                 for item in clients_names:
                     print >> f, item

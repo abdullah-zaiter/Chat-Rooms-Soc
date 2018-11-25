@@ -1,5 +1,9 @@
 from commonfuncts import *
 
+#classe relacionada as salas de bate papo, contem os usuarios (lista da classe usuarios)
+#e as outras informacoes relacionados a uma sala (nome, tipo, senha se for privada)
+#tem tambem os metodos relacionados a sala, como adicionar usuario, retirar, mandar mensagens aos inscritos
+#e listar os usuarios conectados com as informacoes deles
 class ChatRoom:
     Name = ""
     Type = ""  
@@ -50,6 +54,7 @@ class ChatRoom:
         self.exiting_message(user.Connection)
         self.Users.remove(user) 
 
+#lista e envia uma lista com as salas de bate papo existentes com a informacao dos usuarios conectados
 def check_chatrooms(socket_client):
     j = 0
     msg = ""
@@ -61,12 +66,14 @@ def check_chatrooms(socket_client):
         msg = "No open chat rooms."
     socket_client.send(msg)
 
+#recebe uma string com o nome de uma sala e checa se ha alguma sala com esse nome ou nao 
 def compare_string_to_existing_roomnames(name):
     for i in range(len(Chat_rooms)):
         if(name == Chat_rooms[i].Name):
             return True
     return False
 
+#cria uma sala com todas as consideracoes necessarias, como se o nome eh usado e com a checagem do tipo da sala
 def create_chatroom(socket_client):
     msg = "Enter room name: "
     name = send_receive_string(msg, socket_client)
@@ -85,19 +92,25 @@ def create_chatroom(socket_client):
     Chat_rooms.append(ChatRoom(name,ttype,user,password))
     socket_client.send("New "+Chat_rooms[-1].Type+" room '"+name+"' created successfully")        
 
+#inscreve um usuario a uma sala considerando salas privadas e 3 tentativas de senha
 def enter_chatroom(socket_client):
     if(len(Chat_rooms)<=0):
         socket_client.send("No open rooms now, create one or wait for someone else to do so.")
+        return False
     else:
         socket_client.send("Available rooms, choose one:\n")
         check_chatrooms(socket_client)
         room = send_receive_string("", socket_client)
         index = from_room_name_to_index(room)
+        if(index == None):
+            socket_client.send("wrong name kiddo!")
+            return False
         if(Chat_rooms[index].Type == "PRIVATE" or Chat_rooms[index].Type == "private"):
             msg = "Private room, Enter password: "
             password = send_receive_string(msg, socket_client)
             if(password == Chat_rooms[index].Password):
                 Chat_rooms[index].add_user(All_Users[from_socket_conn_to_index(socket_client)])
+                return True
             else:
                 i = 1
                 while (i<3 and password != Chat_rooms[index].Password):
@@ -106,11 +119,15 @@ def enter_chatroom(socket_client):
                     password = send_receive_string(msg, socket_client)
                     if(password == Chat_rooms[index].Password):
                         Chat_rooms[index].add_user(All_Users[from_socket_conn_to_index(socket_client)])
+                        return True
                         break
+                if (i == 3):
+                    return False
         else:
             Chat_rooms[index].add_user(All_Users[from_socket_conn_to_index(socket_client)])
-                        
+            return True
 
+#sair de uma sala de bate pappo deletando a sala caso ela estiver com 0 usuarios
 def exit_chatroom(socket_client):
     index, j= from_socket_conn_to_room_index(socket_client)
     Chat_rooms[index].delete_user(Chat_rooms[index].Users[j])
@@ -118,7 +135,7 @@ def exit_chatroom(socket_client):
         print("Room '"+Chat_rooms[index].Name+"' is empty now, deleting.")
         del Chat_rooms[index]
         pass
-
+#chama o metodo de mandar mensagem para todos da sala, "da sala certa", na primeira linha ele pesquisa qual sala eh
 def send_msg_to_current_room(msg, socket_client):
     index,j = from_socket_conn_to_room_index(socket_client)
     Chat_rooms[index].send_to_all_users(msg,socket_client)

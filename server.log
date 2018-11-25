@@ -1,19 +1,30 @@
-2018-11-25 13:32:57,549 - Server started on port : 5023
-2018-11-25 13:33:01,590 - Connection of 127.0.0.1:33910 created
-2018-11-25 13:33:04,344 - Server: New User Added asdasd
-2018-11-25 13:33:04,345 - Connection of 127.0.0.1:33910 is registered as asdasd
-2018-11-25 13:33:09,384 - Connection of 127.0.0.1:33914 created
-2018-11-25 13:33:22,023 - asdasd tried to enter chat room
-2018-11-25 13:33:22,023 - asdasd failed joining chat room
-2018-11-25 13:33:27,337 - asdasd created chat room asdasd
-2018-11-25 13:33:35,537 - Connection of 127.0.0.1:33922 created
-2018-11-25 13:33:56,322 - Server: New User Added aaa
-2018-11-25 13:33:56,323 - Connection of 127.0.0.1:33914 is registered as aaa
-2018-11-25 13:34:03,976 - Server: New User Added asdd
-2018-11-25 13:34:03,976 - Connection of 127.0.0.1:33922 is registered as asdd
-2018-11-25 13:34:06,019 - asdd wanted to know the chat rooms
-2018-11-25 13:34:06,020 - Server: sent users available chat rooms to asdd
-2018-11-25 13:34:12,838 - asdd tried to enter chat room
-2018-11-25 13:34:12,839 - Server: sent users available chat rooms to asdd
-2018-11-25 13:34:14,437 - asdd successfully joined chat room asdasd
-2018-11-25 13:34:28,125 - Connection of 127.0.0.1:33934 created
+2018-11-25 18:12:58,789 - Server started on port : 5023
+2018-11-25 18:13:05,497 - Connection of 127.0.0.1:35892 created
+2018-11-25 18:13:08,447 - Server: New User Added abdu
+2018-11-25 18:13:08,448 - Connection of 127.0.0.1:35892 is registered as abdu
+2018-11-25 18:13:21,314 - Connection of 127.0.0.1:35894 created
+2018-11-25 18:13:23,812 - Server: New User Added asdasd
+2018-11-25 18:13:23,813 - Connection of 127.0.0.1:35894 is registered as asdasd
+2018-11-25 18:13:28,339 - Connection of 127.0.0.1:35898 created
+2018-11-25 18:13:30,745 - Server: New User Added asfdasdfa
+2018-11-25 18:13:30,787 - Connection of 127.0.0.1:35898 is registered as asfdasdfa
+2018-11-25 18:13:40,390 - asfdasdfa created chat room asd
+2018-11-25 18:13:44,370 - asdasd wanted to know the chat rooms
+2018-11-25 18:13:44,370 - Server: sent users available chat rooms to asdasd
+2018-11-25 18:13:49,191 - asdasd wanted to know the available users
+2018-11-25 18:13:56,743 - asdasd tried to enter chat room
+2018-11-25 18:13:56,745 - Server: sent users available chat rooms to asdasd
+2018-11-25 18:14:00,694 - asdasd successfully joined chat room asd
+2018-11-25 18:14:03,324 - asdasd contacted chat room asd
+2018-11-25 18:14:08,128 - abdu tried to enter chat room
+2018-11-25 18:14:08,212 - Server: sent users available chat rooms to abdu
+2018-11-25 18:14:11,019 - abdu successfully joined chat room asd
+2018-11-25 18:14:13,752 - abdu contacted chat room asd
+2018-11-25 18:14:14,803 - abdu contacted chat room asd
+2018-11-25 18:14:17,079 - Server sent 'You exited the room !' to abdu
+2018-11-25 18:14:17,080 - abdu signed out the chat room asd
+2018-11-25 18:14:20,505 - Server sent 'You exited the room !' to asdasd
+2018-11-25 18:14:20,506 - asdasd signed out the chat room asd
+2018-11-25 18:14:25,480 - Server sent 'You exited the room !' to asfdasdfa
+2018-11-25 18:14:25,481 - asfdasdfa signed out the chat room asd
+2018-11-25 18:14:25,481 - Server: Room 'asd' is empty now, deleting.

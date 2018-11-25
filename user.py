@@ -25,12 +25,15 @@ def compare_string_to_existing_usernames(name):
 def delete_user(socket_client):
     index = from_socket_conn_to_index(socket_client)
     All_Users[index].close_connection()
-    print("User "+ All_Users[index].Username + "signed out.")        
+    msg = "User "+ All_Users[index].Username + "signed out successfully."
+    print(msg)
+    logging.info("Server: "+msg)           
     del All_Users[index]
     socket_client.close()
 
 #dada uma funcao socket, essa funcao faz o cadastro do cliente no servidor, pedindo as informacoes necessarias como username e trata casos de clisoes de username
 def signup_client(socket_client):
+
     msg = "Enter your name: "
     index = from_socket_conn_to_index(socket_client)
     name = send_receive_string(msg, socket_client)
@@ -39,10 +42,13 @@ def signup_client(socket_client):
         name = send_receive_string(msg, socket_client)
     if len(All_Users[index].Username)>=1:
         socket_client.send("Username Updated to " + name)
+
         print("Username Updated to " + name)
     else:
-        socket_client.send("New User Added " + name)        
-        print("New User Added " + name)
+        socket_client.send("New User Added " + name) 
+        msg = "New User Added " + name
+        print(msg)
+        logging.info("Server: "+msg)                   
     All_Users[index].Username = name
 
 #dada uma conexao socket, essa funcao comfirma se o cliente de fato quer sair do servidor e se sim ela retira ele.

@@ -1,5 +1,5 @@
 from commonfuncts import *
-
+from user import *
 #classe relacionada as salas de bate papo, contem os usuarios (lista da classe usuarios)
 #e as outras informacoes relacionados a uma sala (nome, tipo, senha se for privada)
 #tem tambem os metodos relacionados a sala, como adicionar usuario, retirar, mandar mensagens aos inscritos
@@ -42,6 +42,7 @@ class ChatRoom:
         if(j==0):
             msg = "No one is in the room."
         cs_sock.send(msg)
+        logging.info("Server: sent users connected to current chatroom to "+All_Users[from_socket_conn_to_index(cs_sock)].Username)
     def welcoming_message(self, cs_sock):
         self.send_to_all_users("Entered This Chat room!", cs_sock)
         cs_sock.send("Welcome to '"+ self.Name +"' ! feel free to  share your thoughts, not fake news.")
@@ -64,6 +65,7 @@ def check_chatrooms(socket_client):
             msg += "Chat room "+str(j)+": "+Chat_rooms[i].Name+", "+str(len(Chat_rooms[i].Users))+" User(s) connected. \n"    
     if(j==0):
         msg = "No open chat rooms."
+    logging.info("Server: sent users available chat rooms to "+All_Users[from_socket_conn_to_index(socket_client)].Username)    
     socket_client.send(msg)
 
 #recebe uma string com o nome de uma sala e checa se ha alguma sala com esse nome ou nao 
@@ -93,7 +95,7 @@ def create_chatroom(socket_client):
     socket_client.send("New "+Chat_rooms[-1].Type+" room '"+name+"' created successfully")        
 
 #inscreve um usuario a uma sala considerando salas privadas e 3 tentativas de senha
-def enter_chatroom(socket_client):
+def join_chatroom(socket_client):
     if(len(Chat_rooms)<=0):
         socket_client.send("No open rooms now, create one or wait for someone else to do so.")
         return False
@@ -132,7 +134,9 @@ def exit_chatroom(socket_client):
     index, j= from_socket_conn_to_room_index(socket_client)
     Chat_rooms[index].delete_user(Chat_rooms[index].Users[j])
     if len(Chat_rooms[index].Users)<=0:
-        print("Room '"+Chat_rooms[index].Name+"' is empty now, deleting.")
+        msg = "Room '"+Chat_rooms[index].Name+"' is empty now, deleting."
+        print(msg)
+        logging.info("Server: "+msg)    
         del Chat_rooms[index]
         pass
 #chama o metodo de mandar mensagem para todos da sala, "da sala certa", na primeira linha ele pesquisa qual sala eh

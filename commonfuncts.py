@@ -1,5 +1,6 @@
 import socket
 import sys
+import logging
 
 #variaveis globais do programa:
 #conexao socket do servidor
@@ -8,6 +9,8 @@ s = socket.socket()
 All_Users = list()
 #lista de TODAS as salas disponiveis no servidor
 Chat_rooms = list()
+
+logging.basicConfig(filename='server.log', filemode='w', format='%(asctime)s - %(message)s', level=logging.INFO)
 
 #funcao que recebe uma string e uma conexao socket, manda a string e espera a resposta do cliente.
 #retorna a string enviada pelo cliente

@@ -1,0 +1,23 @@
+2018-11-25 13:13:33,758 - Server started on port : 5023
+2018-11-25 13:13:35,526 - Connection of 127.0.0.1:33586 created
+2018-11-25 13:13:38,305 - Server: 'New User Added asdasd
+2018-11-25 13:13:38,305 - Connection of 127.0.0.1:33586 is registered as asdasd
+2018-11-25 13:13:52,273 - Connection of 127.0.0.1:33590 created
+2018-11-25 13:14:01,639 - Server: 'New User Added foo
+2018-11-25 13:14:01,640 - Connection of 127.0.0.1:33590 is registered as foo
+2018-11-25 13:14:27,970 - foo wanted to know the chat rooms
+2018-11-25 13:14:27,971 - Server: sent users available chat rooms to foo
+2018-11-25 13:14:35,876 - foo wanted to know the available users
+2018-11-25 13:14:47,723 - asdasd created chat room asd
+2018-11-25 13:14:52,039 - foo wanted to know the chat rooms
+2018-11-25 13:14:52,039 - Server: sent users available chat rooms to foo
+2018-11-25 13:14:57,819 - foo tried to enter chat room
+2018-11-25 13:14:57,820 - Server: sent users available chat rooms to foo
+2018-11-25 13:15:33,935 - foo successfully joined chat room asd
+2018-11-25 13:15:37,684 - foo contacted chat room asd
+2018-11-25 13:15:41,173 - asdasd contacted chat room asd
+2018-11-25 13:15:45,462 - Server sent 'You exited the room !' to foo
+2018-11-25 13:15:45,462 - foo signed out the chat room asd
+2018-11-25 13:15:51,768 - Server sent 'You exited the room !' to asdasd
+2018-11-25 13:15:51,768 - asdasd signed out the chat room asd
+2018-11-25 13:15:51,769 - Server: Room 'asd' is empty now, deleting.

@@ -1,0 +1,31 @@
+2019-04-07 19:16:15,814 - Server started on port : 5023
+2019-04-07 19:16:30,661 - Connection of 127.0.0.1:39492 created
+2019-04-07 19:16:38,909 - Server: New User Added abdullah
+2019-04-07 19:16:38,909 - Connection of 127.0.0.1:39492 is registered as abdullah
+2019-04-07 19:16:43,753 - abdullah wanted to know the available users
+2019-04-07 19:16:51,348 - abdullah wanted to know the chat rooms
+2019-04-07 19:16:51,348 - Server: sent users available chat rooms to abdullah
+2019-04-07 19:17:29,886 - abdullah created chat room professional Socket discussions
+2019-04-07 19:17:38,231 - abdullah contacted chat room professional Socket discussions
+2019-04-07 19:17:52,606 - Connection of 127.0.0.1:39502 created
+2019-04-07 19:17:59,131 - Server: New User Added omar
+2019-04-07 19:17:59,131 - Connection of 127.0.0.1:39502 is registered as omar
+2019-04-07 19:18:03,079 - omar wanted to know the chat rooms
+2019-04-07 19:18:03,080 - Server: sent users available chat rooms to omar
+2019-04-07 19:18:07,966 - omar tried to enter chat room
+2019-04-07 19:18:07,966 - Server: sent users available chat rooms to omar
+2019-04-07 19:18:21,492 - omar successfully joined chat room professional Socket discussions
+2019-04-07 19:18:26,310 - omar contacted chat room professional Socket discussions
+2019-04-07 19:18:29,521 - omar contacted chat room professional Socket discussions
+2019-04-07 19:18:34,735 - abdullah contacted chat room professional Socket discussions
+2019-04-07 19:18:40,935 - abdullah contacted chat room professional Socket discussions
+2019-04-07 19:18:44,574 - omar contacted chat room professional Socket discussions
+2019-04-07 19:18:46,539 - Server sent 'You exited the room !' to omar
+2019-04-07 19:18:46,540 - omar signed out the chat room professional Socket discussions
+2019-04-07 19:18:54,242 - Server sent 'You exited the room !' to abdullah
+2019-04-07 19:18:54,243 - abdullah signed out the chat room professional Socket discussions
+2019-04-07 19:18:54,243 - Server: Room 'professional Socket discussions' is empty now, deleting.
+2019-04-07 19:19:15,071 - Server: User abdullahsigned out successfully.
+2019-04-07 19:19:15,071 - abdullah signed out the server
+2019-04-07 19:19:30,595 - Server: User omarsigned out successfully.
+2019-04-07 19:19:30,596 - omar signed out the server

@@ -1,6 +1,7 @@
 
 
 # Chat-Rooms-Soc!
+### The codes are written in python 2
 
 #### Run the server: server.py
 

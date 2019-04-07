@@ -29,12 +29,14 @@ def send_file(filename):
     if os.path.isfile(filename):
         socket_client.send(filename)
         time.sleep(.500)
+        size = os.path.getsize(filename)
         print("rolando envio")
+        socket_client.send(size)
+        print("mandei o tamanho do arquivo")
         f = open(filename, "rb")
-        l = f.read(1000)
-        while (l):
-            socket_client.send(l)
-            l = f.read(1000)
+        os.stat('somefile.txt')
+        l = f.read(size)
+        socket_client.send(l)
     else:
         print("file doesn't exist.")
         socket_client.send("@nameerror")

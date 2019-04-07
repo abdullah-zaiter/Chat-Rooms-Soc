@@ -1,2 +1,0 @@
-User 1: abdu, adress 127.0.0.1:35892 available, but not in chat rooms
-User 2: asdasd, adress 127.0.0.1:35894 available, but not in chat rooms
